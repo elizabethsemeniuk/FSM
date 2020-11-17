@@ -1,13 +1,13 @@
 package com.company;
 
 public class Transition{
-    Transition(String from, String letter, String to){
+    Transition(int from, char symbol, int to){
         this.from = from;
-        this.letter = letter;
+        this.symbol = symbol;
         this.to = to;
     }
-    public String from;
-    public String letter;
-    public String to;
+    public int from;
+    public char symbol;
+    public int to;
 }
 
