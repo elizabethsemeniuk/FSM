@@ -64,11 +64,11 @@ public class Program {
         return new FSM(SCount, S0, transactionList, finList);
     }
 
-    public static boolean check_W(FSM fsm, String w){
+    public static boolean check_W(FSM fsm, String w0){
         List<Integer> reachable_states= fsm.getReachableStates(fsm.start);
         for(int st : reachable_states){
             fsm.curState = st;
-            if(fsm.check(w))
+            if(fsm.check(w0))
                 return true;
         }
         return false;
@@ -90,8 +90,8 @@ public class Program {
             return;
 
 
-        System.out.print("ababacab ");
-        if(fsm.check("ababacab")){
+        System.out.print("cacacacadd ");
+        if(fsm.check("cacacacadd")){
             System.out.println("YES");
         } else {
             System.out.println("NO");

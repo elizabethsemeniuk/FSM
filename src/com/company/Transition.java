@@ -1,6 +1,6 @@
 package com.company;
 
-public class Transition{
+public class Transition{ // клас переходів
     Transition(int from, char symbol, int to){
         this.from = from;
         this.symbol = symbol;

@@ -23,7 +23,8 @@ public class FSM {
 
     public boolean check(String word){
         for (int i = 0; i < word.length(); i++){
-            move(word.charAt(i));
+            if(!move(word.charAt(i)))
+                return false;
         }
         return fins.contains(curState);
     }
@@ -32,7 +33,7 @@ public class FSM {
         curState = start;
     }
 
-    private boolean move(char symbol){
+    private boolean move(char symbol){ // виконати 1 тр
         for (var i : transitions){
             if (i.from == curState && i.symbol == symbol){
                 curState = i.to;
@@ -42,7 +43,7 @@ public class FSM {
         return false;
     }
 
-    public List<Integer> getReachableStates(int startingPoint) {
+    public List<Integer> getReachableStates(int startingPoint) { //всі стани, в які можна потрапити з поточного
         List<Integer> result = new ArrayList<>();
         ArrayList<Boolean> visited = new ArrayList<Boolean>();
         for(int i = 0; i <= statesCount; i++)
